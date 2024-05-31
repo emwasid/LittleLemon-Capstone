@@ -3,6 +3,9 @@ from django.http import HttpResponse
 from rest_framework import generics, viewsets
 from .serializers import *
 from rest_framework.permissions import IsAuthenticated
+from rest_framework.decorators import api_view, permission_classes
+from rest_framework.response import Response
+from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
 
@@ -22,7 +25,7 @@ class MenuItemView(generics.ListCreateAPIView):
         else:
             return [IsAuthenticated()]
         
-class SingleMenuItemView(generics.RetrieveUpdateAPIView, generics.DestroyAPIView):
+class SingleMenuItemView(generics.RetrieveAPIView, generics.DestroyAPIView):
     queryset = Menu.objects.all()
     serializer_class = MenuItemSerializer
     
@@ -32,3 +35,9 @@ class BookingViewSet(viewsets.ModelViewSet):
     serializer_class = BookingSerializer
     permission_classes = [IsAuthenticated]
     
+@csrf_exempt
+@api_view()
+@permission_classes([IsAuthenticated])
+def msg(request):
+    return Response({"message":"This view is protected"})
+
