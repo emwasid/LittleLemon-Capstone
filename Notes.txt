@@ -1,0 +1,24 @@
+LittleLemon-Capstone Project Configuration Details 
+
+
+-SuperUser-
+
+Username: admin
+Email: admin@littlelemon.com
+Password: password123!
+
+Token: 0d2dfca7baa61bbafa42fee8f5803fd4fb64089b 
+
+
+-Adding user using djoser @ http://127.0.0.1:8000/auth/users/ 
+logged in as admin
+
+new user
+
+Email: test@littlelemon.com
+Username: test
+Password: test123!
+
+Created token using  http://127.0.0.1:8000/auth/token/login/
+
+ "auth_token": "d971984acf93751ac34feecabcd68bde6a5d86bf"
