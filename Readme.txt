@@ -1,3 +1,20 @@
+THANKS FOR LOOKING AT MY PROJECT !
+
+USED PIPENV FOR THIS PROJECT 
+
+CHECK notes.txt for user credentials 
+
+AFTER CLONING PROJECT 
+
+USE PIPENV COMMANDS TO ACTIVATE VIRTUAL ENVIRONMENT AND DEPENDENCIES
+REMEMBER TO SELECT THE PROPER PYTHON INTERPRETER
+
+pipenv shell
+
+pipenv install 
+
+Kindly configure personal database 
+
 Does the web application use Django to serve static HTML content?
 
 - http://127.0.0.1:8000/restaurant/
