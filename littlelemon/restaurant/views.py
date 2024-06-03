@@ -16,7 +16,7 @@ def home(request):
     return render(request, 'index.html', {})
 
 class MenuItemView(generics.ListCreateAPIView):
-    queryset = Menu.objects.all()
+    queryset = MenuItem.objects.all()
     serializer_class = MenuItemSerializer
     
     def get_permissions(self):
@@ -25,8 +25,8 @@ class MenuItemView(generics.ListCreateAPIView):
         else:
             return [IsAuthenticated()]
         
-class SingleMenuItemView(generics.RetrieveAPIView, generics.DestroyAPIView):
-    queryset = Menu.objects.all()
+class SingleMenuItemView(generics.RetrieveUpdateAPIView, generics.DestroyAPIView):
+    queryset = MenuItem.objects.all()
     serializer_class = MenuItemSerializer
     
     
@@ -35,7 +35,7 @@ class BookingViewSet(viewsets.ModelViewSet):
     serializer_class = BookingSerializer
     permission_classes = [IsAuthenticated]
     
-@csrf_exempt
+
 @api_view()
 @permission_classes([IsAuthenticated])
 def msg(request):
